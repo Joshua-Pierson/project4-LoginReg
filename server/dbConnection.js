@@ -4,7 +4,7 @@ const db =  await mysql.createConnection ( {
   host: 'localhost',
   user: 'root',
   password: 'Joshyjosh23!',
-  database: 'userinfo_db'
+  database: 'login_reg_db'
 })
 
 db.connect ((err)=> {

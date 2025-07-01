@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import './App.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from "./Components/Navbar" // Ensure this path is correct based on your project structure
 import HomePage from "./Pages/Homepage"; // Ensure this path is correct based on your project structure

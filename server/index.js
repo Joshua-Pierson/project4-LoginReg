@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import db from './dbConnections.js';
+import db from './dbConnection.js';
 import loginroute from './Routers/login.js';
 import registerroute from './Routers/register.js';
 import categoryroute from './Routers/categories.js';

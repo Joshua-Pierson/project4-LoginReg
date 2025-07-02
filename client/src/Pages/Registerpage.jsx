@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Registerpage() {
   return (
-    <div>
+    <div className="login-container">
       <h1>Register</h1>
       <form>
         <div>

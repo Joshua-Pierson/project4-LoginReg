@@ -15,6 +15,9 @@ export default function Loginpage() {
           <input type="password" />
         </div>
         <button type="submit">Login</button>
+        <div>
+          <p>Don't have an account? <a href="/register">Register here</a></p>
+        </div>
       </form>
     </div>
   );

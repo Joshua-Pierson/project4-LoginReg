@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from "./Components/Navbar" // Ensure this path is correct based on your project structure
-import HomePage from "./Pages/Homepage"; // Ensure this path is correct based on your project structure
-import LoginPage from "./Pages/Loginpage"; // Ensure this path is correct based on your project
-import RegisterPage from "./Pages/Registerpage"; // Ensure this path is correct based on your project structure
-import CategoryPage from "./Pages/Categorypage"; // Ensure this path is correct based on your project
+import NavBar from "./Components/navbar" // Ensure this path is correct based on your project structure
+import HomePage from "./Pages/homepage"; // Ensure this path is correct based on your project structure
+import LoginPage from "./Pages/loginpage"; // Ensure this path matches the actual file casing
+import RegisterPage from "./Pages/registerpage"; // Ensure this path is correct based on your project structure
+import CategoryPage from "./Pages/categorypage"; // Ensure this path is correct based on your project
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 import "./App.css";

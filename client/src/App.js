@@ -7,6 +7,8 @@ import RegisterPage from "./Pages/Registerpage"; // Ensure this path is correct 
 import CategoryPage from "./Pages/Categorypage"; // Ensure this path is correct based on your project
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
+import "./App.css";
+
 
 function App() {
   return (

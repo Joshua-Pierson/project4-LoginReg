@@ -1,5 +1,8 @@
 import express from 'express';
 import cors from 'cors';
+import loginroute from './Routers/login.js';
+import registerroute from './Routers/register.js';
+import categoryroute from './Routers/categories.js';
 // Add and import your route files here, Example:
 // import yourRoute from './Routers/yourRoute.js'
 
@@ -7,6 +10,10 @@ const app = express();
 
 app.use(express.json());  // To parse JSON bodies in requests
 app.use(cors());          // To allow requests from all origins (good for development)
+
+app.use('/login', loginroute);
+app.use('/register', registerroute);
+app.use('/categories', categoryroute);
 
 // Add your route handlers here, Example:
 // app.use('/your-endpoint', yourRoute)

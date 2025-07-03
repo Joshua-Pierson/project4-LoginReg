@@ -4,6 +4,7 @@ import db from './dbConnection.js';
 import loginroute from './Routers/login.js';
 import registerroute from './Routers/register.js';
 import categoryroute from './Routers/categories.js';
+import questionroute from './Routers/questions.js';
 // Add and import your route files here, Example:
 // import yourRoute from './Routers/yourRoute.js'
 
@@ -15,6 +16,8 @@ app.use(cors());          // To allow requests from all origins (good for develo
 app.use('/login', loginroute);
 app.use('/register', registerroute);
 app.use('/categories', categoryroute);
+app.use('/questions', questionroute);
+
 
 // Add your route handlers here, Example:
 // app.use('/your-endpoint', yourRoute)

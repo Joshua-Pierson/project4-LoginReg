@@ -4,26 +4,15 @@ import db from '../dbConnection.js'
 const router = express.Router();
 
 router.post('/', async (req, res) => {
-  const { username, password } = req.body;
+  const { user_name, password_hash } = req.body;
 
   try {
-    const existingUser = await db.collection('users').findOne({ user_name: username });
-
-    if (existingUser) {
-      return res.status(409).json({ message: 'User already exists' });
-    }
-
-    const newUser = {
-      user_name: username,
-      password: password
-    };
-
-    await db.collection('users').insertOne(newUser);
-    res.status(201).json({ message: 'User registered successfully' });
+    const [result] = await db.query ("INSERT INTO login_reg_db.login (user_name, password_hash) VALUES (?, ?)", [user_name, password_hash]) 
+    res.status(201).send("User registered successfully");
   } catch (error) {
-    console.error('Error registering user:', error);
-    res.status(500).json({ message: 'Internal server error' });
+    console.error("Register user error:", error);
+    res.status(500).send("Server error while adding user");
   }
-});
-
+})
 export default router;
+

@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import axios from "axios";
 
-export default function Categorypage() {
+export default function categorypage() {
   // This component will display the categories in a table format
   // You can fetch the categories from the server and map them to table rows
   const [categories, setCategories] = useState([]);

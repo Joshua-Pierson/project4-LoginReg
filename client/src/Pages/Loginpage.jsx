@@ -1,29 +1,31 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
-export default function Loginpage() {
-  const [formData, setFormData] = useState ({
+export default function loginpage({ setUser }) {
+  const [formData, setFormData] = useState({
     user_name: "",
     password_hash: ""
-  })
+  });
 
-  function handleChange (event) {
-    const {name, value} = event.target
-    setFormData ({...formData, [name]: value})
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   }
 
-  async function handleSubmit (event) {
-    event.preventDefault()
-    console.log ("step 1")
+  async function handleSubmit(event) {
+    event.preventDefault();
     try {
-      console.log ("step 2")
-      const response = await axios.post ("http://localhost:4000/login", formData)
-      console.log ("step 3")
-      console.log (response.data)
-    }
-    catch (error) {
-      console.log (error)
+      const response = await axios.post("http://localhost:4000/login", formData);
+      console.log("Login successful:", response.data);
+      setUser(formData.user_name);
+
+      // Optional: redirect after login
+      window.location.href = "/category"; // Redirect to category page after successful login
+    } catch (error) {
+      console.error("Login error:", error.response?.data || error.message);
     }
   }
 
@@ -33,11 +35,23 @@ export default function Loginpage() {
       <form onSubmit={handleSubmit}>
         <div>
           <label>User Name:</label>
-          <input type="text" name="user_name" value={formData.user_name} onChange={handleChange} />
+          <input
+            type="text"
+            name="user_name"
+            value={formData.user_name}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div>
           <label>Password:</label>
-          <input type="password" name="password_hash" value={formData.password_hash} onChange={handleChange} />
+          <input
+            type="password"
+            name="password_hash"
+            value={formData.password_hash}
+            onChange={handleChange}
+            required
+          />
         </div>
         <button type="submit">Login</button>
         <div>

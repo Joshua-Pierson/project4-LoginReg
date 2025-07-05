@@ -2,23 +2,24 @@ import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from "./Components/Navbar" // Ensure this path is correct based on your project structure
 import HomePage from "./Pages/Homepage"; // Ensure this path is correct based on your project structure
-import LoginPage from "./Pages/Loginpage"; // Ensure this path is correct based on your project
+import LoginPage from "./Pages/loginpage"; // Ensure this path is correct based on your project structure
 import RegisterPage from "./Pages/Registerpage"; // Ensure this path is correct based on your project structure
-import CategoryPage from "./Pages/Categorypage"; // Ensure this path is correct based on your project
+import CategoryPage from "./Pages/categorypage"; // Ensure this path is correct based on your project structure
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 import "./App.css";
 
 
 function App() {
+  const [user, setUser] = useState("Guest");
   return (
     <div>
       
       <Router>
-        <NavBar />
+        <NavBar user={user} setUser={setUser} />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage setUser={setUser} />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/category" element={<CategoryPage />} />
           {/* Add more routes as needed */}

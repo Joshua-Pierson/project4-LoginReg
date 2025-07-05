@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function loginpage({ setUser }) {
+export default function Loginpage({ setUser }) {
   const [formData, setFormData] = useState({
     user_name: "",
     password_hash: ""

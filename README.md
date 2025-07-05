@@ -50,6 +50,17 @@ This app provides a clean, user-friendly interface to help users access personal
 - Story 3
     As a user on a mobile device, I want to access all features and content easily on a small screen, So that I can use the app on-the-go without losing functionality.
     
+## How to run project
+
+### 1: Clone the repo:
+    * git clone https://github.com/Joshua-Pierson/project4-LoginReg.git
+
+
+### 2: inside the server/ directory
+    * Start server with node index.js or nodemon
+
+### 3: inside the client/ directory
+    * Start with npm start
 
 
 ## Wireframe

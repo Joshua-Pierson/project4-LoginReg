@@ -32,25 +32,44 @@ export default function Categorypage() {
   }, [])
   
  return (
-    <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
+      <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link0">
       <Row>
         <Col sm={4}>
           <ListGroup>
-            <ListGroup.Item action {...categories[0].category_id} href="#link1">
-              {categories[0].category_name}
-            </ListGroup.Item>
-            <ListGroup.Item action {...categories[1].category_id} href="#link2">
-              {categories[1].category_name}
-            </ListGroup.Item>
+            {categories.map((category, index) => (
+              <ListGroup.Item className="custom-list-item"
+                key={category.category_id}
+                action
+                href={`#link${index}`}
+              >
+                {category.category_name}
+                
+              </ListGroup.Item>
+            ))}
           </ListGroup>
         </Col>
         <Col sm={8}>
-          <Tab.Content>
-            <Tab.Pane eventKey="#link1">Tab pane content 1</Tab.Pane>
-            <Tab.Pane eventKey="#link2">Tab pane content 2</Tab.Pane>
+          <Tab.Content className="p-3 shadow-sm rounded bg-light">
+            {categories.map((category, index) => (
+              <Tab.Pane eventKey={`#link${index}`} key={`pane-${category.category_id}`}>
+                <h2 className="text-primary">{category.category_name}</h2>
+                <p className="text-muted">{category.description}</p>
+                <ul className="question-list">
+                  {questions
+                    .filter((q) => q.category_id === category.category_id)
+                    .map((q) => (
+                      <li key={q.question_id}>
+                        <strong>Q:</strong> {q.question_text}<br />
+                        <strong>A:</strong> {q.question_ans}
+                      </li>
+                    ))}
+                </ul>
+              </Tab.Pane>
+            ))}
           </Tab.Content>
         </Col>
       </Row>
     </Tab.Container>
   );
 }
+         

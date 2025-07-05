@@ -1,5 +1,7 @@
 # project4-LoginReg
+
 ## Description
+The objective is to create a secure, user-friendly app that helps you register, log in, and access personalized content with ease. Manage your questions and explore categories seamlessly—all in one place.
 
 
 ## Screen Shot
@@ -18,51 +20,58 @@
 
 
 ## Technology used
-    * React
+    * React, React Router
+    * Axios
     * JavaScript
+    * MySQL
+    * Node.js
     * Bootstrap
     * HTML
     * CSS
 
 
 ## About AutoWise app
-The To-Do List Maker is a simple yet powerful tool designed to help you stay organized and productive. Whether you're managing daily errands, work tasks, or long-term goals, this application provides an intuitive interface for creating, editing, and tracking your to-dos.
+    The Autowise App is a straightforward tool designed to manage user authentication with ease. Whether you’re creating a new account or logging into an existing one, this application offers a smooth and reliable experience.
 
-With features focused on ease-of-use and efficiency, you'll be able to:
-    * Add, edit, and delete tasks quickly
-    * Keep track of completed and pending items
-    * Stay focused with a clean, distraction-free layout
+    With features focused on usability and security, you’ll be able to:
+    * Register and log in quickly and safely
+    * Browse content organized by categories
+
+This app provides a clean, user-friendly interface to help users access personalized content with confidence.
 
 
 ## User Story
 - Story 1
-    As a user, I want to create and organize tasks, so that I can keep track of what I need to do throughout the day.
+   As a user, I want to log in with my credentials and remain signed in until I log out, So that I can seamlessly access my dashboard and personalized content without re-entering my information.
 
 - Story 2
-    As a user, I want to mark tasks as complete, so that I can clearly see what I’ve accomplished and what’s still pending.
+    As a user, I want to browse through different automotive categories, So that I can easily find relevant guides, tools, and resources.
 
 - Story 3
-    As a user, I want to be able to delete tasks, so that I can update my list as plans change or remove items that are no longer needed.
+    As a user on a mobile device, I want to access all features and content easily on a small screen, So that I can use the app on-the-go without losing functionality.
+    
 
 
 ## Wireframe
 
 ### Main/Home page
-<img src="./Images/WireFrame.png#">
+<img src="#">
 
-### To-Do Page
-<img src="./Images/WireFrame To-Do.png">
+### Login Page
+<img src="#">
 
-### Contact Page
-<img src="./Images/WireFrame-Contact.png">
+### Register Page
+<img src="#">
 
+### Catogory Page
+<img src="#">
 
 ## Next Steps
-* I want to add an "Email My To-Do List" Button, that will allow users to send their current to-do list to their email.
+* I would allow users to submit questions tied to specific categories and display those questions on the category pages or on a dashboard for easy browsing.
 
-* I would improve task organization by adding categories or priority levels (e.g., "Work", "Personal", "Urgent").
+* I would create a profile page where users can update their username, password, or other info securely.
  
-* I would also futher more improve task organization by creating a way to  users filter or sort tasks based on category or status.
+* I would add a commenting or reply system so users can discuss questions and provide feedback.
 
 ## Author
 Joshua Pierson: <a href="https://www.linkedin.com/in/joshua-pierson726" rel="nofollow">@Linkedin</a>

@@ -23,7 +23,9 @@ export default function Loginpage({ setUser }) {
       setUser(formData.user_name);
 
       // Optional: redirect after login
-      window.location.href = "/category"; // Redirect to category page after successful login
+      window.location.href = "/category"; 
+      localStorage.setItem("user_name", formData.user_name);
+      setUser(formData.user_name); // Redirect to category page after successful login
     } catch (error) {
       console.error("Login error:", error.response?.data || error.message);
     }

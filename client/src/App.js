@@ -11,7 +11,9 @@ import "./App.css";
 
 
 function App() {
-  const [user, setUser] = useState("Guest");
+  const [user, setUser] = useState(() => {
+  return localStorage.getItem("user_name") || "Guest";
+});
   return (
     <div>
       

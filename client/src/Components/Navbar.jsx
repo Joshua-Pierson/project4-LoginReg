@@ -5,11 +5,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 
 export default function NavBar({ user, setUser }) {
-  const handleLogout = () => {
-    console.log("User logged out");
-    setUser("Guest");
-    window.location.href = '/login';
-  };
+const handleLogout = () => {
+  console.log("User logged out");
+  localStorage.removeItem("user_name");
+  setUser("Guest");
+  window.location.href = "/login";
+};
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">

@@ -56,6 +56,35 @@ This app provides a clean, user-friendly interface to help users access personal
     * git clone https://github.com/Joshua-Pierson/project4-LoginReg.git
 
 
+### 2: Database 
+    * CREATE TABLE `categories` (
+        `category_id` int NOT NULL AUTO_INCREMENT,
+        `category_name` varchar(100) NOT NULL,
+        `description` text,
+        PRIMARY KEY (`category_id`),
+        UNIQUE KEY `category_name` (`category_name`)
+        ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+    * CREATE TABLE `login` (
+        `user_id` int NOT NULL AUTO_INCREMENT,
+        `user_name` varchar(80) NOT NULL,
+        `password_hash` varchar(255) NOT NULL,
+        PRIMARY KEY (`user_id`),
+        UNIQUE KEY `user_name` (`user_name`)
+        ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+    * CREATE TABLE `questions` (
+        `question_id` int NOT NULL AUTO_INCREMENT,
+        `category_id` int NOT NULL,
+        `question_text` text NOT NULL,
+        `question_ans` text NOT NULL,
+        `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (`question_id`),
+        KEY `category_id` (`category_id`),
+        CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`)
+        ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
 ### 2: inside the server/ directory
     * Start server with node index.js or nodemon
 
@@ -73,30 +102,4 @@ This app provides a clean, user-friendly interface to help users access personal
 ## Author
 Joshua Pierson: <a href="https://www.linkedin.com/in/joshua-pierson726" rel="nofollow">@Linkedin</a>
 
-CREATE TABLE `categories` (
-  `category_id` int NOT NULL AUTO_INCREMENT,
-  `category_name` varchar(100) NOT NULL,
-  `description` text,
-  PRIMARY KEY (`category_id`),
-  UNIQUE KEY `category_name` (`category_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-CREATE TABLE `login` (
-  `user_id` int NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(80) NOT NULL,
-  `password_hash` varchar(255) NOT NULL,
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `user_name` (`user_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-CREATE TABLE `questions` (
-  `question_id` int NOT NULL AUTO_INCREMENT,
-  `category_id` int NOT NULL,
-  `question_text` text NOT NULL,
-  `question_ans` text NOT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`question_id`),
-  KEY `category_id` (`category_id`),
-  CONSTRAINT `questions_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 

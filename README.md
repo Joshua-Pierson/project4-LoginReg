@@ -63,20 +63,6 @@ This app provides a clean, user-friendly interface to help users access personal
     * Start with npm start
 
 
-## Wireframe
-
-### Main/Home page
-<img src="#">
-
-### Login Page
-<img src="#">
-
-### Register Page
-<img src="#">
-
-### Catogory Page
-<img src="#">
-
 ## Next Steps
 * I would allow users to submit questions tied to specific categories and display those questions on the category pages or on a dashboard for easy browsing.
 

@@ -1,33 +1,27 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; // if using react-router
 
 export default function Loginpage({ setUser }) {
-  const [formData, setFormData] = useState({
-    user_name: "",
-    password_hash: ""
-  });
+  const [formData, setFormData] = useState({ user_name: "", password_hash: "" });
+  const [error, setError] = useState(null);
+  const navigate = useNavigate(); // for client side routing
 
-  function handleChange(event) {
-    const { name, value } = event.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   }
 
-  async function handleSubmit(event) {
-    event.preventDefault();
+  async function handleSubmit(e) {
+    e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4000/login", formData);
-      console.log("Login successful:", response.data);
+      const response = await axios.post("http://localhost:5000/login", formData);
       setUser(formData.user_name);
-
-      // Optional: redirect after login
-      window.location.href = "/category"; 
       localStorage.setItem("user_name", formData.user_name);
-      setUser(formData.user_name); // Redirect to category page after successful login
-    } catch (error) {
-      console.error("Login error:", error.response?.data || error.message);
+      setError(null);
+      navigate("/category"); // smooth navigation without reload
+    } catch (err) {
+      setError(err.response?.data || "Login failed");
     }
   }
 
@@ -55,9 +49,12 @@ export default function Loginpage({ setUser }) {
             required
           />
         </div>
+        {error && <p style={{ color: "red" }}>{error}</p>}
         <button type="submit">Login</button>
         <div>
-          <p>Don't have an account? <a href="/register">Register here</a></p>
+          <p>
+            Don't have an account? <a href="/register">Register here</a>
+          </p>
         </div>
       </form>
     </div>

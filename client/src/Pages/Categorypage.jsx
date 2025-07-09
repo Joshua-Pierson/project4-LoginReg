@@ -15,7 +15,7 @@ export default function Categorypage()  {
     useEffect(() => {
     async function fetchCategories () {
       console.log ( "Fetching category from db ...")
-      const response = await axios.get ('http://localhost:4000/categories/')
+      const response = await axios.get('/categories');
       setCategories (response.data)
     }  
     fetchCategories();
@@ -25,7 +25,7 @@ export default function Categorypage()  {
       useEffect(() => {
     async function fetchQuestions () {
       console.log ( "Fetching questions from db ...")
-      const response = await axios.get ('http://localhost:4000/questions/')
+      const response = await axios.get ('/questions')
       setQuestions (response.data)
     }  
     fetchQuestions();

@@ -11,7 +11,9 @@ import questionroute from './Routers/questions.js';
 const app = express();
 
 app.use(express.json());  // To parse JSON bodies in requests
-app.use(cors());          // To allow requests from all origins (good for development)
+app.use(cors(({
+  origin: 'http://localhost:3000',         // To allow requests from all origins (good for development)
+})));
 
 app.use('/login', loginroute);
 app.use('/register', registerroute);
